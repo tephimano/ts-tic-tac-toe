@@ -1,7 +1,6 @@
 import "./App.css";
 import LoginPage from "./components/LoginPage";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query-devtools";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import GamePage from "./components/GamePage";
 import ProtectedPage from "./components/ProtectedPage";
@@ -23,7 +22,6 @@ function App() {
   return (
     <div className="app-content">
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
         <BrowserRouter forceRefresh={true}>
           <Switch>
             <Route path="/" component={LoginPage} exact />
